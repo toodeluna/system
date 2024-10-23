@@ -17,6 +17,39 @@
   programs.home-manager.enable = true;
   programs.neovim.enable = true;
   programs.firefox.enable = true;
+  programs.bat.enable = true;
+
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      q = "exit";
+      cls = "clear";
+      vim = "nvim";
+      cat = "bat";
+      ls = "lsd";
+      tree = "lsd --tree";
+      collect-garbage = "sudo nix-collect-garbage --delete-old";
+    };
+    interactiveShellInit = ''
+      fish_vi_key_bindings
+    '';
+  };
+
+  programs.lsd = {
+    enable = true;
+    settings = {
+      sorting.dir-grouping = "first";
+      date = "+%d/%m/%Y %H:%M";
+      blocks = [
+        "permission"
+        "user"
+        "date"
+        "name"
+        "size"
+        "git"
+      ];
+    };
+  };
 
   programs.git = {
     enable = true;
