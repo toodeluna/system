@@ -39,21 +39,6 @@ in
     users.luna = import ./home.nix;
   };
 
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = 1;
-    EDITOR = "nvim";
-    BROWSER = "firefox";
-  };
-
-  environment.systemPackages = with pkgs; [
-    git
-    neovim
-    firefox
-    alacritty
-    rofi-wayland
-    discord
-  ];
-
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "Iosevka" ]; })
   ];

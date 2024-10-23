@@ -4,7 +4,19 @@
   home.username = "luna";
   home.homeDirectory = "/home/luna";
 
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = 1;
+    EDITOR = "nvim";
+    BROWSER = "firefox";
+  };
+
+  home.packages = with pkgs; [
+    discord
+  ];
+
   programs.home-manager.enable = true;
+  programs.neovim.enable = true;
+  programs.firefox.enable = true;
 
   programs.git = {
     enable = true;
@@ -44,5 +56,10 @@
         };
       };
     };
+  };
+
+  programs.rofi = {
+    enable = true;
+    package = pkgs.rofi-wayland;
   };
 }
