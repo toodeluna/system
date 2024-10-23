@@ -3,20 +3,41 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, ... }:
+    {
+      self,
+      nixpkgs,
+      nix-darwin,
+      nix-homebrew,
+    }:
     let
       pkgs = {
         x86_64-linux = import nixpkgs {
           system = "x86_64-linux";
           config.allowUnfree = true;
         };
+
+        aarch64-darwin = import nixpkgs {
+          system = "aarch64-darwin";
+          config.allowUnfree = true;
+        };
       };
     in
     {
       formatter.x86_64-linux = pkgs.x86_64-linux.nixfmt-rfc-style;
+      formatter.aarch64-darwin = pkgs.aarch64-darwin.nixfmt-rfc-style;
 
       nixosConfigurations.luna-desktop = nixpkgs.lib.nixosSystem (rec {
         system = "x86_64-linux";
@@ -25,5 +46,17 @@
           pkgs = pkgs."${system}";
         };
       });
+
+      darwinConfigurations.luna-macbook = nix-darwin.lib.darwinSystem {
+        modules = [
+          nix-homebrew.darwinModules.nix-homebrew
+          ./hosts/luna-macbook/configuration.nix
+        ];
+
+        specialArgs = {
+          inherit self;
+          pkgs = pkgs.aarch64-darwin;
+        };
+      };
     };
 }
