@@ -19,4 +19,30 @@
       init.defaultBranch = "main";
     };
   };
+
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      env = {
+        TERM = "xterm-256color";
+      };
+
+      window = {
+        decorations = "none";
+        opacity = 0.95;
+        padding = {
+          x = 4;
+          y = 4;
+        };
+      };
+
+      font = {
+        size = 14;
+        normal = {
+          family = "Iosevka Nerd Font";
+          style = "Regular";
+        };
+      };
+    };
+  };
 }
