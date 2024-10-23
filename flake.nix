@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +24,7 @@
     {
       self,
       nixpkgs,
+      home-manager,
       nix-darwin,
       nix-homebrew,
     }:
@@ -41,7 +47,12 @@
 
       nixosConfigurations.luna-desktop = nixpkgs.lib.nixosSystem (rec {
         system = "x86_64-linux";
-        modules = [ ./hosts/luna-desktop/configuration.nix ];
+
+        modules = [
+          home-manager.nixosModules.home-manager
+          ./hosts/luna-desktop/configuration.nix
+        ];
+
         specialArgs = {
           pkgs = pkgs."${system}";
         };
