@@ -61,6 +61,7 @@
       darwinConfigurations.luna-macbook = nix-darwin.lib.darwinSystem {
         modules = [
           nix-homebrew.darwinModules.nix-homebrew
+          home-manager.darwinModules.home-manager
           ./hosts/luna-macbook/configuration.nix
         ];
 

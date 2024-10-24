@@ -27,6 +27,12 @@
     shell = pkgs.fish;
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.luna = import ./home.nix;
+  };
+
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
@@ -45,13 +51,15 @@
   };
 
   environment.systemPackages = with pkgs; [
-    neovim
-    alacritty
     mkalias
     nodejs_18
     pnpm
-    git
     vscode
+    alacritty
+  ];
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Iosevka" ]; })
   ];
 
   system.activationScripts.applications.text =
