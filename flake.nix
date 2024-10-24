@@ -32,11 +32,13 @@
       pkgs = {
         x86_64-linux = import nixpkgs {
           system = "x86_64-linux";
+          overlays = import ./overlays;
           config.allowUnfree = true;
         };
 
         aarch64-darwin = import nixpkgs {
           system = "aarch64-darwin";
+          overlays = import ./overlays;
           config.allowUnfree = true;
         };
       };

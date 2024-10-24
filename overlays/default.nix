@@ -1,0 +1,3 @@
+[
+  (import ./iosevka-custom.nix)
+]

@@ -80,7 +80,7 @@
       font = {
         size = 18;
         normal = {
-          family = "Iosevka Nerd Font";
+          family = "Iosevka Custom";
           style = "Regular";
         };
       };
