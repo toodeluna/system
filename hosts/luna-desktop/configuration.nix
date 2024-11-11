@@ -19,13 +19,14 @@
       fish.enable = true;
       hyprland.enable = true;
       steam.enable = true;
+      discord.enable = true;
+      spotify.enable = true;
     };
   };
 
   environment.systemPackages = with pkgs; [
     git
     neovim
-    firefox
     kitty
     rofi-wayland
     zen-browser
