@@ -3,6 +3,7 @@
   syscfg = {
     boot = {
       quiet.enable = true;
+      plymouth.enable = true;
     };
 
     hardware = {

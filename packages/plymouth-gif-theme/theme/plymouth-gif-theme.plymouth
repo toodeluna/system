@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=plymouth-gif-theme
+Description=A plymouth theme that shows a custom GIF.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/plymouth-gif-theme/frames
+ScriptFile=/usr/share/plymouth/themes/plymouth-gif-theme/video.script

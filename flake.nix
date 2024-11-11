@@ -16,6 +16,10 @@
         aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
       };
 
+      packages = {
+        x86_64-linux.plymouth-gif-theme = lib.mkPackage "x86_64-linux" ./packages/plymouth-gif-theme;
+      };
+
       nixosConfigurations = {
         luna-desktop = lib.mkNixosHost "x86_64-linux" "luna-desktop";
       };

@@ -11,6 +11,9 @@ let
 
     nixpkgs = {
       config.allowUnfree = true;
+      overlays = [
+        (_: _: self.packages.${system})
+      ];
     };
   };
 in
