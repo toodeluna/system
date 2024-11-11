@@ -1,20 +1,17 @@
-{ config, lib, pkgs, ... }:
-
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "lunix";
   time.timeZone = "Europe/Brussels";
-
   i18n.defaultLocale = "en_US.UTF-8";
-  console.useXkbConfig = true;
 
+  console.useXkbConfig = true;
   services.libinput.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
   services.xserver.enable = true;
@@ -43,7 +40,4 @@
       rofi-wayland
     ];
   };
-
-  system.stateVersion = "24.05";
 }
-
