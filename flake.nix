@@ -6,9 +6,9 @@
   };
 
   outputs =
-    { self, nixpkgs }:
+    { self, nixpkgs }@inputs:
     let
-      mkNixosHost = import ./lib/mkNixosHost.nix nixpkgs.lib;
+      lib = import ./lib inputs;
     in
     {
       formatter = {
@@ -17,7 +17,11 @@
       };
 
       nixosConfigurations = {
-        luna-desktop = mkNixosHost "x86_64-linux" "luna-desktop";
+        luna-desktop = lib.mkNixosHost "x86_64-linux" "luna-desktop";
+      };
+
+      nixosModules = {
+        default = import ./nixosModules;
       };
     };
 }
