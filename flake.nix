@@ -9,6 +9,11 @@
       url = "github:tinted-theming/schemes";
       flake = false;
     };
+
+    zen-browser = {
+      url = "github:ch4og/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -24,6 +29,7 @@
 
       packages = {
         x86_64-linux.plymouth-gif-theme = lib.mkPackage "x86_64-linux" ./packages/plymouth-gif-theme;
+        x86_64-linux.zen-browser = inputs.zen-browser.packages.x86_64-linux.generic;
       };
 
       nixosConfigurations = {

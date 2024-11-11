@@ -28,5 +28,7 @@
     firefox
     kitty
     rofi-wayland
+    zen-browser
+    speechd
   ];
 }
