@@ -3,10 +3,16 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    base16.url = "github:SenchoPens/base16.nix";
+
+    tinted-theming-schemes = {
+      url = "github:tinted-theming/schemes";
+      flake = false;
+    };
   };
 
   outputs =
-    { self, nixpkgs }@inputs:
+    { nixpkgs, ... }@inputs:
     let
       lib = import ./lib inputs;
     in

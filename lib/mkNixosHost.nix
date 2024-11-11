@@ -1,7 +1,14 @@
-{ self, nixpkgs, ... }:
+{
+  self,
+  nixpkgs,
+  base16,
+  tinted-theming-schemes,
+  ...
+}:
 system: hostName:
 let
   defaultConfig = {
+    scheme = "${tinted-theming-schemes}/base16/catppuccin-mocha.yaml";
     networking.hostName = hostName;
 
     system = {
@@ -22,6 +29,7 @@ nixpkgs.lib.nixosSystem {
 
   modules = [
     defaultConfig
+    base16.nixosModule
     self.nixosModules.default
 
     ../hosts/${hostName}/configuration.nix
