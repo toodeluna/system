@@ -5,5 +5,6 @@
     ./steam.nix
     ./spotify.nix
     ./discord.nix
+    ./stremio.nix
   ];
 }

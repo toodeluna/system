@@ -21,6 +21,7 @@
       steam.enable = true;
       discord.enable = true;
       spotify.enable = true;
+      stremio.enable = true;
     };
   };
 
