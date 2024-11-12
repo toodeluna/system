@@ -22,6 +22,7 @@
       discord.enable = true;
       spotify.enable = true;
       stremio.enable = true;
+      nh.flake = "/home/luna/Git/toodeluna/system";
     };
   };
 

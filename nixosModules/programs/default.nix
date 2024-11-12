@@ -6,5 +6,6 @@
     ./spotify.nix
     ./discord.nix
     ./stremio.nix
+    ./nh.nix
   ];
 }
