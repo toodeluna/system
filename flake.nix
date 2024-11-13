@@ -22,7 +22,7 @@
       };
 
       packages = {
-        x86_64-linux.plymouth-gif-theme = lib.mkPackage "x86_64-linux" ./packages/plymouth-gif-theme;
+        x86_64-linux.plymouth-gif-theme = lib.mkPackage "x86_64-linux" ./packages/plymouth-gif-theme.nix;
         x86_64-linux.zen-browser = inputs.zen-browser.packages.x86_64-linux.generic;
       };
 
