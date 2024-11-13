@@ -3,12 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    base16.url = "github:SenchoPens/base16.nix";
-
-    tinted-theming-schemes = {
-      url = "github:tinted-theming/schemes";
-      flake = false;
-    };
 
     zen-browser = {
       url = "github:ch4og/zen-browser-flake";

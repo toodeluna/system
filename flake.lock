@@ -1,39 +1,5 @@
 {
   "nodes": {
-    "base16": {
-      "inputs": {
-        "fromYaml": "fromYaml"
-      },
-      "locked": {
-        "lastModified": 1721224776,
-        "narHash": "sha256-iakVQHg2DSmdOc5dNBwrDt9JLRxX5MT+IIbxfZEpGdo=",
-        "owner": "SenchoPens",
-        "repo": "base16.nix",
-        "rev": "c89c8123310257f3ddc04cc59aa4b5573c6d515f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "SenchoPens",
-        "repo": "base16.nix",
-        "type": "github"
-      }
-    },
-    "fromYaml": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1721222302,
-        "narHash": "sha256-5vL4w9+tS9yd8WpIiDUtxN1IuxCVK2nebZMs/hCXXis=",
-        "owner": "SenchoPens",
-        "repo": "fromYaml",
-        "rev": "93bad85d1633b8b27287b438c0bd394094c24d06",
-        "type": "github"
-      },
-      "original": {
-        "owner": "SenchoPens",
-        "repo": "fromYaml",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1731139594,
@@ -52,26 +18,8 @@
     },
     "root": {
       "inputs": {
-        "base16": "base16",
         "nixpkgs": "nixpkgs",
-        "tinted-theming-schemes": "tinted-theming-schemes",
         "zen-browser": "zen-browser"
-      }
-    },
-    "tinted-theming-schemes": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1727294262,
-        "narHash": "sha256-UCRGabAyj8+RFkKdSZBR8BPE6yLM3rPpdxXHmwd9rZ0=",
-        "owner": "tinted-theming",
-        "repo": "schemes",
-        "rev": "b3273211d5d1510aee669083fc5a1e0e4b5e310c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tinted-theming",
-        "repo": "schemes",
-        "type": "github"
       }
     },
     "zen-browser": {

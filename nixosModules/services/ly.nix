@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  colorscheme,
   ...
 }:
 {
@@ -12,7 +13,7 @@
   config = lib.mkIf config.syscfg.services.ly.enable {
     services.displayManager =
       let
-        backgroundColor = config.scheme.base00;
+        backgroundColor = colorscheme.base00;
         preStartScript = "${pkgs.coreutils}/bin/printf '%%b\\e]P0${backgroundColor}\\e]P7FFFFFF\\ec'";
       in
       {
