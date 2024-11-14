@@ -31,7 +31,7 @@
       };
 
       nixosModules = {
-        default = import ./nixosModules;
+        default = import ./modules/nixos;
       };
     };
 }

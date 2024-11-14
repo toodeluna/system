@@ -11,5 +11,7 @@
     ./programs
   ];
 
+  nixpkgs.config.allowUnfree = true;
   environment.defaultPackages = [ ];
+  system.stateVersion = "24.05";
 }
