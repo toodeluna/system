@@ -1,12 +1,12 @@
 {
-  pkgs,
+  stdenv,
   lib,
+  ffmpeg,
   logo ? ../assets/img/boot-logo.gif,
 }:
 let
   name = "plymouth-gif-theme";
   description = "A plymouth theme that shows a custom GIF.";
-
   outDir = "$out/share/plymouth/themes/${name}";
 
   themeFileContents = ''
@@ -42,11 +42,11 @@ let
     Plymouth.SetRefreshFunction(RefreshCallback);
   '';
 in
-pkgs.stdenv.mkDerivation {
+stdenv.mkDerivation {
   pname = "plymouth-gif-theme";
   version = "1.0.1";
   phases = [ "installPhase" ];
-  nativeBuildInputs = [ pkgs.ffmpeg ];
+  nativeBuildInputs = [ ffmpeg ];
 
   installPhase = ''
     mkdir -p ${outDir}
