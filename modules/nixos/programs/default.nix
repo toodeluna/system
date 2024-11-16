@@ -7,5 +7,6 @@
     ./discord.nix
     ./stremio.nix
     ./nh.nix
+    ./home-manager.nix
   ];
 }
