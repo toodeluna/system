@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  imports = [ ./programs ];
+  imports = [
+    ./aliases.nix
+    ./programs
+  ];
 
   home.username = "luna";
   home.stateVersion = "24.05";
