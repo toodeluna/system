@@ -5,6 +5,7 @@
     ./boot
     ./i18n
     ./input
+    ./networking
     ./users
     ./fonts
     ./services

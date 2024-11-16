@@ -28,6 +28,7 @@
 
       nixosConfigurations = {
         luna-desktop = lib.mkNixosHost "x86_64-linux" "luna-desktop";
+        luna-laptop = lib.mkNixosHost "x86_64-linux" "luna-laptop";
       };
 
       nixosModules = {
