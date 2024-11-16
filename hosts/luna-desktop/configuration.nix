@@ -22,6 +22,7 @@
       discord.enable = true;
       spotify.enable = true;
       stremio.enable = true;
+      kitty.enable = true;
       nh.flake = "/home/luna/Git/toodeluna/system";
     };
   };
@@ -29,7 +30,6 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
-    kitty
     rofi-wayland
     zen-browser
     speechd

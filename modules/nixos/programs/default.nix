@@ -8,5 +8,6 @@
     ./stremio.nix
     ./nh.nix
     ./home-manager.nix
+    ./kitty.nix
   ];
 }
