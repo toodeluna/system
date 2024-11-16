@@ -10,6 +10,7 @@
     ./fonts
     ./services
     ./programs
+    ./theme
   ];
 
   nixpkgs.config.allowUnfree = true;

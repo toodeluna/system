@@ -27,10 +27,18 @@
       kitty.enable = true;
       nh.flake = "/home/luna/Git/toodeluna/system";
     };
+
+    theme = {
+      colorscheme = import ../../data/colorscheme.nix;
+
+      cursor = {
+        name = "Bibata-Modern-Ice";
+        package = pkgs.bibata-cursors;
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
-    git
     neovim
     rofi-wayland
     zen-browser

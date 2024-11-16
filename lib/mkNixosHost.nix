@@ -8,10 +8,6 @@ system: hostName:
 nixpkgs.lib.nixosSystem {
   inherit system;
 
-  specialArgs = {
-    colorscheme = import ../data/colorscheme.nix;
-  };
-
   modules = [
     self.nixosModules.default
     home-manager.nixosModules.home-manager

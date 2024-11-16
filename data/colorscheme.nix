@@ -1,6 +1,4 @@
 {
-  scheme = "Catppuccin Mocha";
-  author = "https://github.com/catppuccin/catppuccin";
   base00 = "1e1e2e";
   base01 = "181825";
   base02 = "313244";
