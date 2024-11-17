@@ -1,12 +1,8 @@
-{ pkgs, ... }:
-let
-  jetbrains-mono-nerdfont = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
-in
+{ pkgs, config, ... }:
 {
   fonts.packages = with pkgs; [
-    work-sans
-    jetbrains-mono
-    jetbrains-mono-nerdfont
     noto-fonts-cjk-sans
+    config.syscfg.theme.fonts.monospace.package
+    config.syscfg.theme.fonts.gui.package
   ];
 }

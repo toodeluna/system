@@ -24,7 +24,6 @@
       hyprland.enable = true;
       discord.enable = true;
       spotify.enable = true;
-      kitty.enable = true;
       nh.flake = "/home/luna/Git/toodeluna/system";
     };
 
@@ -34,6 +33,18 @@
       cursor = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
+      };
+
+      fonts = {
+        monospace = {
+          name = "JetBrainsMono Nerd Font";
+          package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+        };
+
+        gui = {
+          name = "Work Sans";
+          package = pkgs.work-sans;
+        };
       };
     };
   };
