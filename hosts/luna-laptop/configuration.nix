@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, colorschemes, ... }:
 {
   syscfg = {
     boot = {
@@ -28,7 +28,7 @@
     };
 
     theme = {
-      colorscheme = import ../../data/colorscheme.nix;
+      colorscheme = colorschemes.onedark;
 
       cursor = {
         name = "Bibata-Modern-Ice";
