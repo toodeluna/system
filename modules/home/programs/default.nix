@@ -4,5 +4,6 @@
     ./fish.nix
     ./kitty.nix
     ./lsd.nix
+    ./bat.nix
   ];
 }
