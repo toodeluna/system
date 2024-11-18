@@ -6,5 +6,6 @@
     ./lsd.nix
     ./bat.nix
     ./starship.nix
+    ./lazygit.nix
   ];
 }
