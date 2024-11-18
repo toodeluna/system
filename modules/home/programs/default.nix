@@ -5,5 +5,6 @@
     ./kitty.nix
     ./lsd.nix
     ./bat.nix
+    ./starship.nix
   ];
 }
