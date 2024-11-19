@@ -8,6 +8,33 @@
 
     hardware = {
       graphics.gpu = "amd";
+
+      monitors = [
+        {
+          name = "DP-2";
+          scale = 1.5;
+          resolution = {
+            x = 3840;
+            y = 2160;
+          };
+          position = {
+            x = 0;
+            y = 0;
+          };
+        }
+        {
+          name = "DP-1";
+          scale = 1.5;
+          resolution = {
+            x = 3840;
+            y = 2160;
+          };
+          position = {
+            x = 2560;
+            y = 0;
+          };
+        }
+      ];
     };
 
     services = {

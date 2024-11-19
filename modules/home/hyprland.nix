@@ -6,6 +6,9 @@
 }:
 let
   mod = "SUPER";
+  monitorToString =
+    monitor:
+    "${monitor.name},${toString monitor.resolution.x}x${toString monitor.resolution.y},${toString monitor.position.x}x${toString monitor.position.y},${toString monitor.scale}";
 in
 {
   config = lib.mkIf pkgs.stdenv.isLinux {
@@ -13,6 +16,8 @@ in
       enable = true;
 
       settings = {
+        monitor = map monitorToString systemConfiguration.syscfg.hardware.monitors;
+
         env = [
           "XCURSOR_SIZE,24"
           "XCURSOR_THEME,${systemConfiguration.syscfg.theme.cursor.name}"

@@ -1,3 +1,6 @@
 {
-  imports = [ ./graphics.nix ];
+  imports = [
+    ./graphics.nix
+    ./monitors.nix
+  ];
 }
