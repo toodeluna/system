@@ -2,6 +2,7 @@
 {
   imports = [
     ./aliases.nix
+    ./hyprland.nix
     ./programs
   ];
 
