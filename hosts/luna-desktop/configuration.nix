@@ -75,7 +75,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    neovim
     rofi-wayland
     zen-browser
     speechd

@@ -4,6 +4,7 @@
     ./aliases.nix
     ./hyprland.nix
     ./programs
+    ./neovim
   ];
 
   home.username = "luna";

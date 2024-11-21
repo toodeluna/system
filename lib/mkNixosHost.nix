@@ -2,6 +2,7 @@
   self,
   nixpkgs,
   home-manager,
+  nixvim,
   ...
 }:
 system: hostName:
@@ -23,7 +24,12 @@ nixpkgs.lib.nixosSystem {
       networking.hostName = hostName;
       system.name = hostName;
       nixpkgs.overlays = [ (_: _: self.packages.${system}) ];
-      home-manager.users.luna = self.homeManagerModules.default;
+      home-manager.users.luna = {
+        imports = [
+          self.homeManagerModules.default
+          nixvim.homeManagerModules.nixvim
+        ];
+      };
     }
   ];
 }
