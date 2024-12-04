@@ -1,4 +1,9 @@
-{ pkgs, hostName, ... }:
+{
+  pkgs,
+  hostName,
+  theme,
+  ...
+}:
 {
   time.timeZone = "Europe/Brussels";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -109,13 +114,18 @@
     alsa.support32Bit = true;
   };
 
-  services.displayManager.ly = {
-    enable = true;
+  services.displayManager = rec {
+    preStart = "${pkgs.coreutils}/bin/printf '%%b\\e]P0${theme.base00}\\e]P7FFFFFF\\ec'";
 
-    settings = {
-      vi_mode = true;
-      clear_password = true;
-      clock = "%D %H:%M";
+    ly = {
+      enable = true;
+
+      settings = {
+        vi_mode = true;
+        clear_password = true;
+        clock = "%D %H:%M";
+        term_reset_cmd = "${pkgs.ncurses}/bin/tput reset; ${preStart}";
+      };
     };
   };
 

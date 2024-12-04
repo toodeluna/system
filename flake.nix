@@ -8,6 +8,8 @@
   outputs =
     { self, nixpkgs, ... }:
     let
+      theme = import ./theme.nix;
+
       mkPackage = system: path: nixpkgs.legacyPackages.${system}.callPackage (import path) { };
 
       mkNixosHost =
@@ -16,7 +18,7 @@
           inherit system;
 
           specialArgs = {
-            inherit hostName;
+            inherit hostName theme;
           };
 
           modules = [
