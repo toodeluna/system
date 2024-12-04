@@ -3,10 +3,15 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { self, nixpkgs, ... }:
+    { self, nixpkgs, ... }@inputs:
     let
       theme = import ./theme.nix;
 
@@ -22,6 +27,7 @@
           };
 
           modules = [
+            inputs.home-manager.nixosModules.home-manager
             ./hosts/${hostName}/configuration.nix
             ./hosts/${hostName}/hardware-configuration.nix
             { nixpkgs.overlays = [ (_: _: self.packages.${system}) ]; }

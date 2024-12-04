@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   hostName,
   theme,
   ...
@@ -57,13 +58,11 @@
     systemPackages = with pkgs; [
       ncpamixer
       firefox
-      kitty
-      rofi-wayland
       discord
       spotify
       r2modman
-      git
       neovim
+      nautilus
     ];
 
     sessionVariables = {
@@ -78,6 +77,18 @@
       isNormalUser = true;
       description = "Luna Heyman";
       extraGroups = [ "wheel" ];
+    };
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "hmbackup";
+    users.luna = import ./home.nix;
+
+    extraSpecialArgs = {
+      inherit theme;
+      systemConfiguration = config;
     };
   };
 
