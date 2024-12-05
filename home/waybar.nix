@@ -6,13 +6,13 @@
     style = ''
       * {
         border: none;
-	font-family: Work Sans;
-	font-size: 16px;
+        font-family: Work Sans;
+        font-size: 16px;
       }
 
       window#waybar {
         background-color: #${theme.base00};
-	color: #${theme.base05};
+        color: #${theme.base05};
       }
 
       #workspaces {
@@ -21,15 +21,15 @@
 
       #workspaces button {
         color: #${theme.base05};
-	border-radius: 0;
+        border-radius: 0;
       }
 
       #workspaces button:hover,
       #workspaces button.focused,
       #workspaces button.active {
         background: #${theme.base01};
-	box-shadow: inherit;
-	text-shadow: inherit;
+        box-shadow: inherit;
+        text-shadow: inherit;
       }
 
       #clock {
@@ -42,8 +42,8 @@
 
       #pulseaudio-slider trough {
         min-width: 200px;
-	min-height: 10px;
-	background-color: #${theme.base02};
+        min-height: 10px;
+        background-color: #${theme.base02};
       }
 
       #pulseaudio-slider highlight {
@@ -56,22 +56,26 @@
         position = "bottom";
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "hyprland/window" ];
-        modules-right = [ "pulseaudio" "pulseaudio/slider" "clock" ];
+        modules-right = [
+          "pulseaudio"
+          "pulseaudio/slider"
+          "clock"
+        ];
 
-	clock = {
-	  interval = 60;
-	  format = "{:%D %H:%M}";
-	};
+        clock = {
+          interval = 60;
+          format = "{:%D %H:%M}";
+        };
 
-	"hyprland/workspaces" = {
-	  disabled-scroll = true;
-	  on-click = "activate";
-	};
+        "hyprland/workspaces" = {
+          disabled-scroll = true;
+          on-click = "activate";
+        };
 
-	"pulseaudio/slider" = {
-	  min = 0;
-	  max = 100;
-	};
+        "pulseaudio/slider" = {
+          min = 0;
+          max = 100;
+        };
       }
     ];
   };

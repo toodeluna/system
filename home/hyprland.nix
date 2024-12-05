@@ -5,16 +5,15 @@
   theme,
   ...
 }:
-let
-  wallpaper = toString ../assets/wallpaper.png;
-in
 {
+  xdg.dataFile."wallpaper.png".source = ../assets/wallpaper.png;
+
   services.hyprpaper = {
     enable = true;
 
-    settings = {
-      preload = wallpaper;
-      wallpaper = [ ", ${wallpaper}" ];
+    settings = rec {
+      preload = "${config.home.homeDirectory}/.local/share/wallpaper.png";
+      wallpaper = [ ", ${preload}" ];
     };
   };
 
@@ -49,7 +48,7 @@ in
         "$mod, return, exec, ${pkgs.kitty}/bin/kitty"
         "$mod, B, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, P, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
-	"$mod, E, exec, ${pkgs.nautilus}/bin/nautilus"
+        "$mod, E, exec, ${pkgs.nautilus}/bin/nautilus"
 
         "$mod, Q, killactive"
         "$mod SHIFT, Q, exit"

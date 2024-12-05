@@ -8,8 +8,8 @@
 
       settings = {
         "devtools.chrome.enabled" = true;
-	"devtools.debugger.remote-enabled" = true;
-	"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        "devtools.debugger.remote-enabled" = true;
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       };
 
       userChrome = with theme; ''
