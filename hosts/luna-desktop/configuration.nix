@@ -3,6 +3,7 @@
   config,
   hostName,
   theme,
+  inputs,
   ...
 }:
 {
@@ -84,11 +85,17 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "hmbackup";
-    users.luna = import ./home.nix;
 
     extraSpecialArgs = {
       inherit theme;
       systemConfiguration = config;
+    };
+
+    users.luna = {
+      imports = [
+        ./home.nix
+	inputs.nixvim.homeManagerModules.nixvim
+      ];
     };
   };
 

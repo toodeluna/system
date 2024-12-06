@@ -14,5 +14,6 @@
     ./mako.nix
     ./firefox.nix
     ./xresources.nix
+    ../nixvim
   ];
 }
