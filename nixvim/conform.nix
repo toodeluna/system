@@ -3,6 +3,7 @@
   programs.nixvim.extraPackages = with pkgs; [
     deno
     nixfmt-rfc-style
+    zig
   ];
 
   programs.nixvim.plugins.conform-nvim = {
@@ -12,6 +13,7 @@
       formatters_by_ft = {
         nix = [ "nixfmt" ];
         json = [ "deno_fmt" ];
+        zig = [ "zigfmt" ];
       };
 
       format_on_save = {

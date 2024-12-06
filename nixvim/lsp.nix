@@ -8,6 +8,7 @@
   programs.nixvim.plugins.lsp = {
     enable = true;
     servers.nixd.enable = true;
+    servers.zls.enable = true;
   };
 
   programs.nixvim.plugins.cmp = {
